@@ -5,8 +5,12 @@ import Photo from '../../images/person.jpg';
 import styles from './Cast.module.css';
 
 class Cast extends Component {
+  static defaultProps = {
+    actors: [],
+  };
+
   static propTypes = {
-    actors: PropTypes.array,
+    actors: PropTypes.array.isRequired,
   };
 
   state = {

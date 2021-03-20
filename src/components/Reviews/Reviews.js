@@ -4,8 +4,12 @@ import Axios from 'axios';
 import ListOfReviews from './ListOfReviews';
 
 class Reviews extends Component {
+  static defaultProps = {
+    reviews: [],
+  };
+
   static propTypes = {
-    reviews: PropTypes.array,
+    reviews: PropTypes.array.isRequired,
   };
 
   state = {

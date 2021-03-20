@@ -13,13 +13,22 @@ import {
 } from 'react-notifications';
 
 class MovieDetailsPage extends Component {
+  static defaultProps = {
+    poster_path: '',
+    title: '',
+    userScore: 0,
+    overview: '',
+    genres: [],
+    release_date: '',
+  };
+
   static propTypes = {
-    poster_path: PropTypes.string,
-    title: PropTypes.string,
-    userScore: PropTypes.number,
-    overview: PropTypes.string,
-    genres: PropTypes.array,
-    release_date: PropTypes.string,
+    poster_path: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    userScore: PropTypes.number.isRequired,
+    overview: PropTypes.string.isRequired,
+    genres: PropTypes.array.isRequired,
+    release_date: PropTypes.string.isRequired,
   };
 
   state = {

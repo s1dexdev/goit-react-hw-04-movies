@@ -5,8 +5,12 @@ import Axios from 'axios';
 import styles from './HomePage.module.css';
 
 class HomePage extends Component {
+  static defaultProps = {
+    movies: [],
+  };
+
   static propTypes = {
-    movies: PropTypes.array,
+    movies: PropTypes.array.isRequired,
   };
 
   state = {
