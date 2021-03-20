@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import Axios from 'axios';
 import {
   NotificationContainer,
@@ -9,6 +10,11 @@ import 'react-notifications/lib/notifications.css';
 import styles from './MoviesPage.module.css';
 
 class MoviesPage extends Component {
+  static propTypes = {
+    input: PropTypes.string,
+    movies: PropTypes.array,
+  };
+
   state = {
     input: '',
     movies: [],

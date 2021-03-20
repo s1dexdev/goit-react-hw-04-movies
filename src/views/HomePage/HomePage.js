@@ -1,9 +1,14 @@
 import { Link, withRouter } from 'react-router-dom';
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 import Axios from 'axios';
 import styles from './HomePage.module.css';
 
 class HomePage extends Component {
+  static propTypes = {
+    movies: PropTypes.array,
+  };
+
   state = {
     movies: [],
   };

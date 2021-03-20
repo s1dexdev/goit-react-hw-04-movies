@@ -1,8 +1,13 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 import Axios from 'axios';
 import ListOfReviews from './ListOfReviews';
 
 class Reviews extends Component {
+  static propTypes = {
+    reviews: PropTypes.array,
+  };
+
   state = {
     reviews: [],
   };

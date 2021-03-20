@@ -1,5 +1,6 @@
 import { Route, Link } from 'react-router-dom';
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 import Axios from 'axios';
 import PosterDef from '../../images/posterDef.jpg';
 import Cast from '../../components/Cast/Cast';
@@ -12,10 +13,19 @@ import {
 } from 'react-notifications';
 
 class MovieDetailsPage extends Component {
+  static propTypes = {
+    poster_path: PropTypes.string,
+    title: PropTypes.string,
+    userScore: PropTypes.number,
+    overview: PropTypes.string,
+    genres: PropTypes.array,
+    release_date: PropTypes.string,
+  };
+
   state = {
     poster_path: '',
     title: '',
-    userScore: '',
+    userScore: 0,
     overview: null,
     genres: null,
     release_date: '',

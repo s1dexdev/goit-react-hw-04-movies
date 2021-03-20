@@ -1,9 +1,14 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 import Axios from 'axios';
 import Photo from '../../images/person.jpg';
 import styles from './Cast.module.css';
 
 class Cast extends Component {
+  static propTypes = {
+    actors: PropTypes.array,
+  };
+
   state = {
     actors: [],
   };
