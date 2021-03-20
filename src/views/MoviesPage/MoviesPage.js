@@ -2,6 +2,8 @@ import { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Axios from 'axios';
+import queryString from 'query-string';
+
 import {
   NotificationContainer,
   NotificationManager,
@@ -25,6 +27,24 @@ class MoviesPage extends Component {
     movies: [],
   };
 
+  componentDidMount() {
+    const query = this.getSearchQeryFromProps();
+
+    if (query) {
+      this.fetchMovie(query);
+    }
+  }
+
+  getSearchQeryFromProps = () =>
+    queryString.parse(this.props.location.search).query;
+
+  onQueryChange = query => {
+    this.props.history.push({
+      pathname: this.props.location.pathname,
+      search: `query=${query}`,
+    });
+  };
+
   createNotification = text => {
     return NotificationManager.error(text, 'Error', 5000);
   };
@@ -34,6 +54,7 @@ class MoviesPage extends Component {
 
     const { input } = this.state;
 
+    this.onQueryChange(input);
     this.fetchMovie(input);
   };
 
@@ -70,6 +91,7 @@ class MoviesPage extends Component {
           <input
             className={styles.input}
             type="text"
+            name="query"
             value={input}
             onChange={this.handleInput}
           />

@@ -1,4 +1,4 @@
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, withRouter } from 'react-router-dom';
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 import Axios from 'axios';
@@ -85,6 +85,8 @@ class MovieDetailsPage extends Component {
   handleGoBack = () => {
     const { location, history } = this.props;
 
+    console.log(location.state);
+
     history.push(location?.state?.from || '/');
   };
 
@@ -97,7 +99,7 @@ class MovieDetailsPage extends Component {
       genres,
       release_date,
     } = this.state;
-    const { match } = this.props;
+    const { match, location } = this.props;
 
     return (
       <>
@@ -128,12 +130,28 @@ class MovieDetailsPage extends Component {
 
           <ul>
             <li className={styles.item}>
-              <Link className={styles.link} to={`${match.url}/cast`}>
+              <Link
+                className={styles.link}
+                to={{
+                  pathname: `${match.url}/cast`,
+                  state: {
+                    from: location.state?.from || location,
+                  },
+                }}
+              >
                 Casts
               </Link>
             </li>
             <li className={styles.item}>
-              <Link className={styles.link} to={`${match.url}/reviews`}>
+              <Link
+                className={styles.link}
+                to={{
+                  pathname: `${match.url}/reviews`,
+                  state: {
+                    from: location.state?.from || location,
+                  },
+                }}
+              >
                 Reviews
               </Link>
             </li>
@@ -151,4 +169,4 @@ class MovieDetailsPage extends Component {
   }
 }
 
-export default MovieDetailsPage;
+export default withRouter(MovieDetailsPage);
