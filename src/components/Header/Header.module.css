@@ -1,0 +1,29 @@
+.header {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  box-shadow: 0px 5px 8px 0px rgba(34, 60, 80, 0.2);
+}
+
+.NavLink {
+  text-decoration: none;
+  color: currentColor;
+}
+
+.NavLink:hover,
+.NavLink:focus {
+  text-decoration: underline;
+  color: #b81818;
+}
+
+.NavLinkActive {
+  color: #b81818;
+}
+
+.navList {
+  display: flex;
+  list-style: none;
+}
+
+.item:first-child {
+  margin-right: 10px;
+}

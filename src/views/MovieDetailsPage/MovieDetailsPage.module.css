@@ -1,0 +1,40 @@
+.btn {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+
+  cursor: pointer;
+}
+
+.wrapper {
+  display: flex;
+  padding-bottom: 10px;
+  box-shadow: 0px 5px 8px 0px rgba(34, 60, 80, 0.2);
+}
+
+.infoBox {
+  flex-direction: column;
+  padding-left: 20px;
+}
+
+.addInfo {
+  padding-bottom: 10px;
+  box-shadow: 0px 5px 8px 0px rgba(34, 60, 80, 0.2);
+}
+
+.item:not(:last-child) {
+  margin-bottom: 5px;
+}
+.link {
+  color: rgb(24, 129, 250);
+}
+
+.link:active,
+.link:visited {
+  color: rgb(24, 129, 250);
+}
+
+.link:hover,
+.link:focus {
+  color: #b81818;
+}

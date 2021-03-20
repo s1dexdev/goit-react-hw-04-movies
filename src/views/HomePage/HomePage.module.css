@@ -1,0 +1,16 @@
+.list {
+}
+
+.item:not(:last-child) {
+  padding-bottom: 4px;
+}
+
+.link:active,
+.link:visited {
+  color: rgb(24, 129, 250);
+}
+
+.link:hover,
+.link:focus {
+  color: #b81818;
+}
