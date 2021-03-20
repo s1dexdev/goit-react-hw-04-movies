@@ -11,11 +11,11 @@
 
 .NavLink:hover,
 .NavLink:focus {
-  text-decoration: underline;
   color: #b81818;
 }
 
 .NavLinkActive {
+  text-decoration: underline;
   color: #b81818;
 }
 

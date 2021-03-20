@@ -25,10 +25,8 @@
 .item:not(:last-child) {
   margin-bottom: 5px;
 }
-.link {
-  color: rgb(24, 129, 250);
-}
 
+.link,
 .link:active,
 .link:visited {
   color: rgb(24, 129, 250);
